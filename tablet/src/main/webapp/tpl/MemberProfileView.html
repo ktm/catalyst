@@ -1,0 +1,64 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="topcoat-icon-button--quiet back-button" href="#">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title"><%= model.get("displayName") %></h1>
+    </div>
+    <div class="topcoat-navigation-bar__item right quarter">
+        <a class="topcoat-icon-button--quiet">
+            <span class="topcoat-icon topcoat-icon--edit"></span>
+        </a>
+    </div>
+</div>
+
+<div style="text-align: left;">
+
+<div class="topcoat-list__container">
+    <ul class="topcoat-list">
+        <li class="topcoat-list__item">
+          <table>
+            <tr>
+              <td>   
+                <image id="picture" src="img/nophoto.jpg" width="150" height="150"/> 
+              </td>
+              <td style="vertical-align: text-top;">
+                Member #:<%= model.get("id") === null ? '' : model.get("id") %><br/>
+          <label>Sex:</label>            
+          <input type = "radio"
+                 name = "radSex"
+                 id = "sexFemale"
+                 value = "F"
+                 checked=<%= model.get("sex") == 'F' ? true : false %>/>
+          <label for = "sexFemale">Female</label>
+          <input type = "radio"
+                 name = "radSex"
+                 id = "sexMale"
+                 value = "M"
+                 checked=<%= model.get("sex") == 'M' ? true : false %>/>
+          <label for = "sexMale">Male</label>
+              </td>
+          </table>
+        </li>
+
+
+        <li class="topcoat-list__item">
+          <label for="age" >Age:</label>
+          <input type="text" id="age" name="age" maxlength="8" size="8" value="<%= model.get("age") %>"/>
+        </li>
+
+        <li class="topcoat-list__item">
+          <label for="height" >Height:</label>
+          <input type="text" id="height" name="height" maxlength="8" size="8" value="<%= model.get("height") %>"/>
+        </li>
+
+        <li class="topcoat-list__item">
+          <label for="weight" >Weight:</label>
+          <input type="text" id="weight" name="weight" maxlength="8" size="8" value="<%= model.get("weight") %>"/>
+        </li>
+</ul>
+</div>
+
+</div>

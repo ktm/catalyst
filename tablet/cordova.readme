@@ -1,0 +1,21 @@
+~/Applications/cordova-2.9.0/cordova-cli/bin/cordova create cordova org.tulasi.thi-tablet THI 
+cd cordova
+~/Applications/cordova-2.9.0/cordova-cli/bin/cordova platform add android
+cd ../
+svn export src/main/webapp www-temp
+cd www-temp
+cp -rf * ../cordova/www/
+cd ../cordova
+
+cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git
+cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-console.git
+cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file.git
+cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git
+// the couchbase plugin is not ready
+// ~/Applications/cordova-2.9.0/cordova-cli/bin/cordova plugin add https://github.com/couchbaselabs/LiteGap.git
+
+~/Applications/cordova-2.9.0/cordova-cli/bin/cordova compile android
+
+~/Applications/cordova-2.9.0/cordova-cli/bin/cordova emulate android
+or
+~/Applications/cordova-2.9.0/cordova-cli/bin/cordova ripple android

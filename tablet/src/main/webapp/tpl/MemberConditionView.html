@@ -1,0 +1,31 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="topcoat-icon-button--quiet back-button" href="#member/<%= model.get("id") %>">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title"><%= model.get("displayName") %></h1>
+    </div>
+    <div class="topcoat-navigation-bar__item right quarter">
+        <a class="topcoat-icon-button--quiet">
+            <span class="topcoat-icon topcoat-icon--edit"></span>
+        </a>
+    </div>
+</div>
+
+<div style="text-align: left;">
+
+<div class="topcoat-list__container">
+    <ul class="topcoat-list">
+        <% for (var index = 0; index < model.conditionCollection.models.length; index++){ %>
+           <li class="topcoat-list__item">
+             <p><b><%= model.conditionCollection.models[index].get("displayName") %></b><p>
+             <p><%= model.conditionCollection.models[index].get("description") %></p>
+           </li>
+        <% } %>
+
+</ul>
+</div>
+
+</div>

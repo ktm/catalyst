@@ -1,0 +1,27 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="topcoat-icon-button--quiet back-button" href="#member/<%= member.get("id") %>">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title"><%= member.get("displayName") %></h1>
+    </div>
+    <div class="topcoat-navigation-bar__item right quarter">
+        <a class="topcoat-icon-button--quiet">
+            <span class="topcoat-icon topcoat-icon--edit"></span>
+        </a>
+    </div>
+</div>
+
+<div class="topcoat-list__container">
+  <ul class="topcoat-list">
+    <% for (var index = 0; index < odls.length; index++){ %>
+       <li class="topcoat-list__item">
+         <a href="#odlform/<%= index %>/<%= member.get("id") %>" >
+           <h3><%= odls[index].get("displayName") %> - version <%= odls[index].get("version") %></h3>
+         </a>
+       </li>
+       <% } %>
+  </ul>
+</div>
